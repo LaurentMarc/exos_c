@@ -1,0 +1,123 @@
+!SESSION 2020-02-25 14:47:08.612 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-02-25 14:47:23.165
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-02-25 14:47:23.243
+!MESSAGE OS info: Linux, 5.3.0-24-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2020-02-25 14:47:23.962
+!MESSAGE Target: STM32, Version: 9.3.0, Build date: 20190212-0734, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2020-02-25 14:47:23.963
+!MESSAGE Workspace: /home/marcl/Atollic/exos_c
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2020-02-25 14:47:25.136
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY org.eclipse.jface 2 0 2020-02-25 14:47:25.174
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-02-25 14:47:25.174
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5909ae90,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4489f60f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 2 0 2020-02-25 14:47:25.184
+!MESSAGE Could not register either review selection listener or part listener.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2020-02-25 14:47:25.186
+!MESSAGE Code Review is up.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-02-25 14:47:50.930
+!MESSAGE Unloading product manager
+!SESSION 2020-02-25 14:47:51.273 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/marcl/Atollic/exos_c -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-02-25 14:47:52.902
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-02-25 14:47:52.906
+!MESSAGE OS info: Linux, 5.3.0-24-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2020-02-25 14:47:53.613
+!MESSAGE Target: STM32, Version: 9.3.0, Build date: 20190212-0734, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2020-02-25 14:47:53.613
+!MESSAGE Workspace: /home/marcl/Atollic/exos_c
+
+!ENTRY org.eclipse.jface 2 0 2020-02-25 14:47:54.643
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-02-25 14:47:54.644
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@38e46765,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@192f5f39,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2020-02-25 14:47:56.608
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2020-02-25 14:47:56.655
+!MESSAGE Code Review is up.
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:21.980
+!MESSAGE Indexed '71_distance_point' (0 sources, 0 headers) in 0.362 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:25.105
+!MESSAGE Indexed 'manip_texte_etape2' (1 sources, 0 headers) in 0.159 sec: 16 declarations; 52 references; 5 unresolved inclusions; 0 syntax errors; 2 unresolved names (2.9%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.543
+!MESSAGE Indexed 'manip_texte_etape3' (1 sources, 36 headers) in 0.155 sec: 839 declarations; 1,642 references; 0 unresolved inclusions; 1 syntax errors; 1 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.711
+!MESSAGE Indexed '66_compare_chaine' (1 sources, 21 headers) in 0.11 sec: 523 declarations; 995 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.761
+!MESSAGE Indexed 'langage_C_etape_1' (1 sources, 22 headers) in 0.049 sec: 515 declarations; 989 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.815
+!MESSAGE Indexed 'langage_C_etape_2' (1 sources, 22 headers) in 0.053 sec: 548 declarations; 1,025 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.842
+!MESSAGE Indexed 'etape_3_eclairage_public' (1 sources, 0 headers) in 0.014 sec: 38 declarations; 63 references; 2 unresolved inclusions; 0 syntax errors; 13 unresolved names (11%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.868
+!MESSAGE Indexed 'C_manipulation_texte' (1 sources, 0 headers) in 0.014 sec: 22 declarations; 82 references; 4 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-25 14:48:28.967
+!MESSAGE Indexed '63_toupper' (1 sources, 27 headers) in 0.096 sec: 701 declarations; 1,338 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
