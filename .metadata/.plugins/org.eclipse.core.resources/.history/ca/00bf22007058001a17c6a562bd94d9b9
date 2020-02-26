@@ -24,7 +24,6 @@ float distance_between_two_points(float xa, float xb, float ya, float yb){
 }
 
 
-
 int main(int argc, char* argv[]){
 	float xa = 1;
 	float xb = 2;
