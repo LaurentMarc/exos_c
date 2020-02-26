@@ -18,18 +18,21 @@
 					<folderInfo id="com.atollic.managedbuild.pctools.config.gnu.exe.debug.543748732." name="/" resourcePath="">
 						<toolChain id="com.atollic.managedbuild.pctoolschain.gnu.exe.debug.1252892167" name="Atollic Linux PC Tools" superClass="com.atollic.managedbuild.pctoolschain.gnu.exe.debug">
 							<targetPlatform id="com.atollic.pctools.managedbuild.target.gnu.platform.exe.debug.362601310" name="Debug Platform" superClass="com.atollic.pctools.managedbuild.target.gnu.platform.exe.debug"/>
-							<builder buildPath="${workspace_loc:/71_distance_point}/Debug" id="com.atollic.pctools.managedbuild.target.gnu.builder.exe.debug.376921378" managedBuildOn="true" name="GNU Make Builder.Debug" superClass="com.atollic.pctools.managedbuild.target.gnu.builder.exe.debug"/>
+							<builder buildPath="${workspace_loc:/71_distance_point}/Debug" customBuilderProperties="toolChainpathString=/opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ARMTools/bin|toolChainpathType=1|" id="com.atollic.pctools.managedbuild.target.gnu.builder.exe.debug.376921378" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make Builder" superClass="com.atollic.pctools.managedbuild.target.gnu.builder.exe.debug"/>
 							<tool id="com.atollic.managedbuild.pctools.gnu.archiver.base.1189533233" name="Archiver" superClass="com.atollic.managedbuild.pctools.gnu.archiver.base"/>
 							<tool id="com.atollic.managedbuild.pctools.gnu.cpp.compiler.exe.debug.2460636" name="C++ Compiler" superClass="com.atollic.managedbuild.pctools.gnu.cpp.compiler.exe.debug">
-								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.optimization.level.101587481" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.optimization.level" value="com.atollic.pctools.gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.debugging.level.1147984533" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.debugging.level" value="com.atollic.pctools.gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.optimization.level.101587481" name="Optimization Level" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.debugging.level.1147984533" name="Debug Level" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="com.atollic.managedbuild.pctools.gnu.c.compiler.exe.debug.1118343597" name="C Compiler" superClass="com.atollic.managedbuild.pctools.gnu.c.compiler.exe.debug">
-								<option defaultValue="com.atollic.pctools.gnu.c.optimization.level.none" id="com.atollic.pctools.gnu.c.compiler.exe.debug.option.optimization.level.755138653" superClass="com.atollic.pctools.gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
-								<option id="com.atollic.pctools.gnu.c.compiler.exe.debug.option.debugging.level.542747738" superClass="com.atollic.pctools.gnu.c.compiler.exe.debug.option.debugging.level" value="com.atollic.pctools.gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option defaultValue="com.atollic.pctools.gnu.c.optimization.level.none" id="com.atollic.pctools.gnu.c.compiler.exe.debug.option.optimization.level.755138653" name="Optimization Level" superClass="com.atollic.pctools.gnu.c.compiler.exe.debug.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.c.compiler.exe.debug.option.debugging.level.542747738" name="Debug Level" superClass="com.atollic.pctools.gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.c.debugging.level.max" valueType="enumerated"/>
 								<inputType id="com.atollic.managedbuild.pctools.gnu.c.compiler.input.1051461710" superClass="com.atollic.managedbuild.pctools.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="com.atollic.managedbuild.pctools.gnu.c.linker.exe.debug.280046138" name="C Linker" superClass="com.atollic.managedbuild.pctools.gnu.c.linker.exe.debug">
+								<option id="com.atollic.pctools.gnu.c.link.option.libs.745576053" superClass="com.atollic.pctools.gnu.c.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="m"/>
+								</option>
 								<inputType id="com.atollic.managedbuild.pctools.gnu.c.linker.input.1388721635" superClass="com.atollic.managedbuild.pctools.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -62,15 +65,15 @@
 					<folderInfo id="com.atollic.managedbuild.pctools.config.gnu.exe.release.709425075." name="/" resourcePath="">
 						<toolChain id="com.atollic.managedbuild.pctoolschain.gnu.exe.release.2078311269" name="Atollic Linux PC Tools" superClass="com.atollic.managedbuild.pctoolschain.gnu.exe.release">
 							<targetPlatform id="com.atollic.pctools.managedbuild.target.gnu.platform.exe.release.649829804" name="Debug Platform" superClass="com.atollic.pctools.managedbuild.target.gnu.platform.exe.release"/>
-							<builder buildPath="${workspace_loc:/71_distance_point}/Release" id="com.atollic.pctools.managedbuild.target.gnu.builder.exe.release.750286177" managedBuildOn="true" name="GNU Make Builder.Release" superClass="com.atollic.pctools.managedbuild.target.gnu.builder.exe.release"/>
+							<builder buildPath="${workspace_loc:/71_distance_point}/Release" id="com.atollic.pctools.managedbuild.target.gnu.builder.exe.release.750286177" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make Builder" superClass="com.atollic.pctools.managedbuild.target.gnu.builder.exe.release"/>
 							<tool id="com.atollic.managedbuild.pctools.gnu.archiver.base.177655374" name="Archiver" superClass="com.atollic.managedbuild.pctools.gnu.archiver.base"/>
 							<tool id="com.atollic.managedbuild.pctools.gnu.cpp.compiler.exe.release.1156160465" name="C++ Compiler" superClass="com.atollic.managedbuild.pctools.gnu.cpp.compiler.exe.release">
-								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.optimization.level.943191644" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.optimization.level" value="com.atollic.pctools.gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.debugging.level.1616113514" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.debugging.level" value="com.atollic.pctools.gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.optimization.level.943191644" name="Optimization Level" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.optimization.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.debugging.level.1616113514" name="Debug Level" superClass="com.atollic.pctools.gnu.cpp.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 							</tool>
 							<tool id="com.atollic.managedbuild.pctools.gnu.c.compiler.exe.release.2115595886" name="C Compiler" superClass="com.atollic.managedbuild.pctools.gnu.c.compiler.exe.release">
-								<option defaultValue="com.atollic.pctools.gnu.c.optimization.level.most" id="com.atollic.pctools.gnu.c.compiler.exe.release.option.optimization.level.894747527" superClass="com.atollic.pctools.gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
-								<option id="com.atollic.pctools.gnu.c.compiler.exe.release.option.debugging.level.1463074980" superClass="com.atollic.pctools.gnu.c.compiler.exe.release.option.debugging.level" value="com.atollic.pctools.gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option defaultValue="com.atollic.pctools.gnu.c.optimization.level.most" id="com.atollic.pctools.gnu.c.compiler.exe.release.option.optimization.level.894747527" name="Optimization Level" superClass="com.atollic.pctools.gnu.c.compiler.exe.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="com.atollic.pctools.gnu.c.compiler.exe.release.option.debugging.level.1463074980" name="Debug Level" superClass="com.atollic.pctools.gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="com.atollic.pctools.gnu.c.debugging.level.none" valueType="enumerated"/>
 								<inputType id="com.atollic.managedbuild.pctools.gnu.c.compiler.input.1047598644" superClass="com.atollic.managedbuild.pctools.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="com.atollic.managedbuild.pctools.gnu.c.linker.exe.release.956475559" name="C Linker" superClass="com.atollic.managedbuild.pctools.gnu.c.linker.exe.release">
@@ -87,6 +90,7 @@
 					</folderInfo>
 				</configuration>
 			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -96,4 +100,5 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>
