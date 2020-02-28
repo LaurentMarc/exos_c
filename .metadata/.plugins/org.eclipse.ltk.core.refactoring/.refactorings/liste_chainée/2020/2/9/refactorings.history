@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;liste_chainée/pile.h&apos; to &apos;Pile.h&apos;" description="Rename resource &apos;pile.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pile.h" name="Pile.h" stamp="1582728584113" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;liste_chainée/pile.c&apos; to &apos;Pile.c&apos;" description="Rename resource &apos;pile.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pile.c" name="Pile.c" stamp="1582728591743" updateReferences="true"/>
+</session>

@@ -1,7 +1,9 @@
-09:40:34 **** Incremental Build of configuration Debug for project 73_distance_point ****
+16:03:24 **** Incremental Build of configuration Debug for project 90_traitements ****
 make -j4 all 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"73_distance_point.d" -MT"73_distance_point.o" -o "73_distance_point.o" "../73_distance_point.c"
-gcc  -o "73_distance_point"  ./73_distance_point.o   -lm
-09:40:36 **** Incremental Build of configuration Debug for project 73_distance_point ****
+make: Nothing to be done for 'all'.
+16:03:28 **** Incremental Build of configuration Debug for project 90_traitements ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:03:48 **** Incremental Build of configuration Debug for project 90_traitements ****
 make -j4 all 
 make: Nothing to be done for 'all'.

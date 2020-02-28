@@ -1,0 +1,70 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 27, 2020
+ *      Author: marcl
+ */
+#include <stdio.h>
+
+
+typedef struct{
+	int RValue;
+	int GValue;
+	int BValue;
+}color;
+
+
+void SetLedColor(color ledcolor){
+	if (ledcolor.RValue != 0 && ledcolor.GValue == 0 && ledcolor.BValue == 0){
+		printf("Red %d\n",ledcolor.RValue);
+	}
+	else if (ledcolor.RValue == 0 && ledcolor.GValue != 0 && ledcolor.BValue == 0){
+		printf("Green %d\n",ledcolor.GValue);
+	}
+	else if (ledcolor.RValue == 0 && ledcolor.GValue == 0 && ledcolor.BValue != 0){
+		printf("Blue %d\n",ledcolor.BValue);
+	}
+	else if ((ledcolor.RValue == ledcolor.GValue) && (ledcolor.GValue == ledcolor.BValue)){
+		if (ledcolor.RValue == 0){
+			printf("Black %d\n",ledcolor.RValue);
+		}
+		else{
+		printf("White %d\n",ledcolor.RValue);
+		}
+	}
+	else if (ledcolor.RValue !=0 && ledcolor.GValue == 0 && ledcolor.BValue !=0 ){
+		printf("Purple %d\n",ledcolor.RValue);
+	}
+	else if (ledcolor.RValue == ledcolor.GValue && ledcolor.BValue ==0 ){
+		printf("yellow %d\n",ledcolor.RValue);
+	}
+}
+
+
+void Setledline(color tabline[], int tabsize){
+	for (int j = 0; j < tabsize; j ++){
+		for (int i = 0; i < tabsize; i ++){
+				SetLedColor(tabline[i]);
+				}
+	}
+}
+
+
+int main(){
+	color white, green, blue, red, purple, yellow, black;
+	int tabsize = 7;
+	white.BValue = 255;	white.RValue = 255;	white.GValue = 255;	green.GValue = 255;
+	green.BValue = 0; green.RValue = 0; blue.BValue = 255; blue.RValue = 0; blue.GValue = 0;
+	red.RValue = 255; red.GValue = 0; red.BValue = 0; purple.RValue = 255;
+	purple.BValue = 255; purple.GValue = 0;	yellow.GValue = 255; yellow.RValue = 255;
+	yellow.BValue = 0; black.GValue = 0; black.BValue = 0; black.RValue = 0;
+
+	color line_1 [7] = {red, red, red, red, red, red, red};
+	color line_2 [7] = {red, black, black, black, black, black, red};
+	color line_3 [7] = {red, black, green, green, green, black, red};
+	color line_4 [7] = {red, black, green, yellow, green, black, red};
+	color tabline [7][7] = {{line_1, line_2, line_3, line_4, line_3, line_2, line_1}};
+
+	Setledline(tabline, tabsize);
+
+}

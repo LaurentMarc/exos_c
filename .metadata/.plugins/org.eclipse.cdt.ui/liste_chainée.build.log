@@ -1,0 +1,6 @@
+16:08:08 **** Incremental Build of configuration Debug for project liste_chainée ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+16:08:09 Build Finished (took 466ms)
+
