@@ -1,469 +1,14 @@
-!SESSION 2020-02-28 08:18:01.246 -----------------------------------------------
+!SESSION 2020-03-13 10:40:45.226 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=1.8.0_181
 java.vendor=Oracle Corporation
 BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
 Command-line arguments:  -os linux -ws gtk -arch x86_64
 
-This is a continuation of log file /home/marcl/Atollic/exos_c/.metadata/.bak_2.log
-Created Time: 2020-02-28 15:55:28.684
+This is a continuation of log file /home/marcl/Atollic/exos_c/.metadata/.bak_1.log
+Created Time: 2020-03-13 15:32:43.142
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:28.684
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:28.685
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:28.685
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:28.685
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:28.685
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:28.686
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:31.855
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:31.856
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:31.856
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:31.856
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:31.856
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:32:43.142
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
@@ -513,7 +58,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:31.857
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:32:43.143
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -560,298 +105,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppC
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:51.933
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:51.934
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:51.936
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:51.936
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 15:55:51.937
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 15:55:51.937
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:02:52.930
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
@@ -896,7 +150,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:02:52.930
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -938,7 +192,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppC
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:02:52.931
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
@@ -983,7 +237,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:02:52.931
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1025,7 +279,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofApp
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:02:52.931
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
@@ -1070,7 +324,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:02:52.931
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:43:49.105
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1112,7 +366,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppC
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:11.497
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:43.193
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
@@ -1157,7 +411,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:11.497
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:43.193
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1199,7 +453,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppC
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:11.497
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:43.195
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
@@ -1244,7 +498,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:11.497
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:43.196
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1286,7 +540,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofApp
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:11.498
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:43.197
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
@@ -1331,7 +585,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:11.498
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:43.198
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1373,268 +627,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppC
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:24.453
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:24.454
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:24.454
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:24.454
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:24.454
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 30 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:24.454
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:247)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:302)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:305)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:361)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:384)
-	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:487)
-	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:406)
-	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:285)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:28.355
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:45.729
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
@@ -1684,7 +677,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:28.356
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:45.730
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1731,7 +724,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppC
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:28.356
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:45.731
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
@@ -1781,7 +774,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:28.356
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:45.731
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
@@ -1828,7 +821,7 @@ java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofApp
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:28.356
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-03-13 15:55:45.731
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 1
 org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
@@ -1878,298 +871,7 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
 	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
 	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:28.356
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:48.928
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:48.929
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.ProfAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:48.930
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:48.931
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator.
-!STACK 0
-java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GprofAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2020-02-28 16:03:48.931
-!MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
-	at org.eclipse.cdt.managedbuilder.internal.core.Option.getApplicabilityCalculator(Option.java:1176)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2602)
-	at org.eclipse.cdt.managedbuilder.internal.core.Tool.getToolCommandFlags(Tool.java:2765)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addRuleForTool(GnuMakefileGenerator.java:1701)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargetsRules(GnuMakefileGenerator.java:1558)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.addTargets(GnuMakefileGenerator.java:1480)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.populateTopMakefile(GnuMakefileGenerator.java:1190)
-	at org.eclipse.cdt.managedbuilder.makegen.gnu.GnuMakefileGenerator.generateMakefiles(GnuMakefileGenerator.java:742)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1011)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:876)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:751)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:513)
-	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:460)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:736)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:207)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:331)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:406)
-	at org.eclipse.core.internal.resources.Project$1.run(Project.java:551)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:529)
-	at org.eclipse.core.internal.resources.Project.build(Project.java:120)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2$1.run(AbstractCLaunchDelegate2.java:364)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildProject(AbstractCLaunchDelegate2.java:379)
-	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.buildForLaunch(AbstractCLaunchDelegate2.java:296)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
-	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
-	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
-	... 35 more
-!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-02-28 16:03:48.931
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2020-03-13 15:55:45.731
 !MESSAGE Plug-in com.atollic.truestudio.pctools was unable to load class org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator.
 !STACK 0
 java.lang.ClassNotFoundException: org.eclipse.cdt.managedbuilder.gnu.ui.GcovAppCalculator cannot be found by com.atollic.truestudio.pctools_1.0.0.20190212-0734
