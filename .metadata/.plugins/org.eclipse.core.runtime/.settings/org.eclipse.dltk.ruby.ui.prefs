@@ -1,6 +1,6 @@
 DLTK_comment_task_tag=211,54,130
 DLTK_comment_task_tag_bold=true
-DLTK_comment_task_tag_italic=false
+DLTK_comment_task_tag_italic=true
 DLTK_comment_task_tag_strikethrough=false
 DLTK_comment_task_tag_underline=true
 DLTK_default=131,148,150
@@ -9,7 +9,7 @@ DLTK_doc.topic=220,50,47
 DLTK_doc.topic_bold=false
 DLTK_doc.topic_italic=true
 DLTK_doc_bold=false
-DLTK_doc_italic=true
+DLTK_doc_italic=false
 DLTK_keyword=181,137,0
 DLTK_keyword_bold=false
 DLTK_keyword_italic=true
