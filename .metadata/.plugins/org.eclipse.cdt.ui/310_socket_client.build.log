@@ -1,7 +1,6 @@
-16:14:35 **** Incremental Build of configuration Debug for project 310_socket_client ****
+11:56:46 **** Incremental Build of configuration Debug for project 310_socket_client ****
 make -j4 all 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-gcc  -o "310_socket_client"  ./debug.o ./main.o   
+make: rien à faire pour « all ».
 
-16:14:36 Build Finished (took 987ms)
+11:56:47 Build Finished (took 588ms)
 
