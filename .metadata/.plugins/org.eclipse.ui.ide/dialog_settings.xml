@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/marc/Doc_DEV/exos_c/puissance4_embedded"/>
+		<item value="/home/marc/Doc_DEV/exos_c/port_serie_UART"/>
+		<item value="/home/marc/Doc_DEV/exos_c/led_blink"/>
 		<item value="/home/marcl/Atollic/exos_c"/>
 	</list>
 	<section name="WORKBENCH_SETTINGS">

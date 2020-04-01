@@ -59,56 +59,29 @@ void Setonecolor(color color_selected,int tabsize){
 //créée et affiche tableau avec numéro//
 
 void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
-
 	if (number == 0){                  // modifie la couleur des emplacements à modifier pour former un 0 //
-		for (int row = 0; row < tabsize; row ++){
-			for (int col = 0; col < tabsize; col ++){
-				if (row == 0 || row == 6){
-					matrice[row][2] = nbr_color;
-					matrice[row][3] = nbr_color;
-					matrice[row][4] = nbr_color;
-				}
-				else if (row == 1 || row == 2 || row == 3 || row == 4 || row == 5){
-					matrice[row][1] = nbr_color;
-					matrice[row][5] = nbr_color;
-				}
-				else{
-					matrice[row][col] = bckgrnd;
-				}
-			}
-		}
+		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
+		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
+		color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
+		color line_4 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
+		color line_5 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
+		color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
+		color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
+		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
+		Setledmatrix(number_tabline, tabsize);
 	}
 	if (number == 1){                  // modifie la couleur des emplacements à modifier pour former un 1 //
-		for (int row = 0; row < tabsize; row ++){
-			for (int col = 0; col < tabsize; col ++){
-				if ((col == 4) || (row == 1 && col == 3) || (row == 2 && col == 2) || (row == 3 && col == 1)){
-					matrice[row][col] = nbr_color;
-				}
-				else{
-					matrice[row][col] = bckgrnd;
-				}
-
-			}
-		}
+		color line_1 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_2 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_4 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_6 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
+		color line_7 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
+		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
+		Setledmatrix(number_tabline, tabsize);
 	}
 	if (number == 2){
-		for (int row = 0; row < tabsize; row ++){
-			for (int col = 0; col < tabsize; col ++){
-				if ((row == 0 && col == 2) || (row == 0 && col == 3) || (row == 0 && col == 4)
-						|| (row == 1 && col == 1) || (row == 1 && col == 5) || (row == 2 && col == 5)
-						|| (row == 3 && col == 2) || (row == 3 && col == 3) || (row == 3 && col == 4)
-						|| (row == 4 && col == 1) || (row == 5 && col == 1) || (row == 6 && col == 2)
-						|| (row == 6 && col == 3) || (row == 6 && col == 4) ||(row == 6 && col == 5)){
-					matrice[row][col] = nbr_color;
-				}
-				else{
-					matrice[row][col] = bckgrnd;
-				}
-
-			}
-		}
-
-
 		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
 		color line_3 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -118,8 +91,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 3){
 		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -130,8 +103,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 4){
 		color line_1 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -142,8 +115,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 5){
 		color line_1 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
@@ -154,8 +127,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 6){
 		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -166,8 +139,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 7){
 		color line_1 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
 		color line_2 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -178,8 +151,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 8){
 		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -190,8 +163,8 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
-
 	}
+
 	if (number == 9){
 		color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
 		color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
@@ -203,7 +176,6 @@ void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
 		color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
 		Setledmatrix(number_tabline, tabsize);
 	}
-	Setledmatrix(matrice, tabsize);
 }
 
 

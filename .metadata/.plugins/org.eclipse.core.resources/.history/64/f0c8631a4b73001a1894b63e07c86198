@@ -1,0 +1,65 @@
+/*
+ * game_p4.c
+ *
+ *  Created on: 30 mars 2020
+ *      Author: marc
+ */
+#include <stdio.h>
+#include <stdint.h>
+#include "debug.h"
+#include "game_p4.h"
+
+static int8_t matrix[TABLE_HEIGHT][TABLE_WIDTH];
+static int8_t token_top_selector;
+static int8_t active_player;
+
+/* vide la matrice
+ * fixer le active_player
+ * initialise les couleurs associées à chaque joueur
+ * */
+void gp4_init(void) {
+	//matrice vide
+	for (int8_t row = 0; row < TABLE_HEIGHT; row++) {
+		for (int8_t col = 0; col < TABLE_WIDTH; col++) {
+			matrix[row][col] = EMPTY_SPACE;
+		}
+	}
+	active_player = PLAYER_1;
+	token_top_selector = 0;
+}
+
+void gp4_show_board(void) {
+	printf("\n\ntop line\t");
+	for (int8_t col = 0; col < TABLE_WIDTH; col++){
+		if (col == token_top_selector){
+			printf("%d ", active_player);
+		}
+		else{
+			printf("%d ", EMPTY_SPACE);
+		}
+	}
+
+	for (int8_t row = 0; row < TABLE_HEIGHT; row++) {
+		printf("\nline %d  \t", row);
+		for (int8_t col = 0; col < TABLE_WIDTH; col++) {
+			printf("%d ", matrix[row][col]);
+		}
+	}
+}
+
+void gp4_next_player(void){
+	if (active_player == PLAYER_1){
+		active_player = PLAYER_2;
+	}
+	else{
+		active_player = PLAYER_1;
+	}
+}
+
+int main(void) {
+	gp4_init();
+	gp4_show_board();
+	gp4_next_player();
+	gp4_show_board();
+
+}

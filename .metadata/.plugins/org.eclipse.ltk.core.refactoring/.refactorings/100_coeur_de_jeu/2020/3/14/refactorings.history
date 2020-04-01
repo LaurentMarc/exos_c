@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Create method gp4_test_move_all" description="Extract Method Refactoring" fileName="file:/home/marc/Doc_DEV/exos_c/100_coeur_de_jeu/src/main.c" flags="4" id="org.eclipse.cdt.internal.ui.refactoring.extractfunction.ExtractFunctionRefactoring" name="gp4_test_move_all" replaceDuplicates="false" selection="1378,442" stamp="1585659811194" visibility="private"/>
+</session>

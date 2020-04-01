@@ -1,0 +1,16 @@
+/*
+ * game_p4.h
+ *
+ *  Created on: 31 mars 2020
+ *      Author: marc
+ */
+
+#ifndef GAME_P4_H_
+#define GAME_P4_H_
+
+#define TABLE_WIDTH 7
+#define TABLE_HEIGHT 6
+#define PLAYER_1 1
+#define player_2 2
+
+#endif /* GAME_P4_H_ */
