@@ -1,7 +1,7 @@
-16:05:14 **** Incremental Build of configuration Debug for project 100_coeur_de_jeu ****
+14:33:59 **** Incremental Build of configuration Debug for project multitache_donnees ****
 make -j4 all 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-gcc  -o "100_coeur_de_jeu"  ./src/debug.o ./src/game_p4.o ./src/main.o   
-16:05:18 **** Incremental Build of configuration Debug for project 100_coeur_de_jeu ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/game.d" -MT"src/game.o" -o "src/game.o" "../src/game.c"
+gcc  -o "multitache_donnees"  ./src/game.o ./src/game_p4.o ./src/leds_control.o ./src/main.o ./src/timer.o   -lpthread
+14:34:03 **** Incremental Build of configuration Debug for project multitache_donnees ****
 make -j4 all 
 make: rien à faire pour « all ».

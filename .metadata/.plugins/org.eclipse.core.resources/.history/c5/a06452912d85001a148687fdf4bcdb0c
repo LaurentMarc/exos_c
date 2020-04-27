@@ -1,0 +1,23 @@
+/*
+ * timer.h
+ *
+ *  Created on: 23 avr. 2020
+ *      Author: marc
+ */
+
+#ifndef TIMER_H_
+#define TIMER_H_
+
+typedef struct {
+	timer_name name;
+	timer_status status;
+	timer_owner owner;
+	int countdown;
+} timer_struct;
+
+typedef struct {
+	timer_struct timer[TIMER_NB];
+	pthread_mutex_t mutex;
+} timer;
+
+#endif /* TIMER_H_ */

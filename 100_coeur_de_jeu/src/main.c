@@ -34,5 +34,6 @@ int main(void) {
 	debug_setlevel(5);
 	gp4_test_move_all();
 //	gp4_test_play_token();
+//	gp4_test_check_winner();
 
 }

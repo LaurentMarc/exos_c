@@ -19,16 +19,17 @@ void question(void) {
 			"Pour ce tableau, Comment sont les adresses de chaque zone du tableau dans la mémoire ?\n");
 	printf(
 			"Quel est le rapport entre les indices du tableau et l'adresse de chaque ligne ?\n");
-	printf("Comment sont organisées les  du tableau dans la mémoire ?\n");
+	printf(
+			"Comment sont organisées les  du tableau dans la mémoire ?\n");
 }
 
 #define SIZE 4
 int T[SIZE] = { 10, 20, 30, 40 };
 
 void array1(void) {
-	printf("\nTableau T[%d] : \n", SIZE);
+	printf("\nTableau (global ) int T[%d] : \n", SIZE);
 	for (int i = 0; i < SIZE; i++) {
-		int * theAdd = &(T[i]);
+		int * theAdd = &( T[i] );
 		printf(
 				"indice=%d, Access(T[i])=%d, Addresse (&xx)= %p, Dereferencement(*addresse)=%02d\n",
 				i, T[i], theAdd, *theAdd);
@@ -85,7 +86,7 @@ void array3d(void) {
 	question();
 }
 
-int size(int inParamTableau[]) {
+int size(int inParamTableau[]  ) {
 
 	printf("Taille d'un char   %ld\n", sizeof(char));
 	printf("Taille d'un int8_t %ld\n", sizeof(int8_t));
@@ -96,15 +97,26 @@ int size(int inParamTableau[]) {
 	printf("Taille d'un int    %ld\n", sizeof(int));
 	printf("Taille d'un sizeof(long)   %ld\n", sizeof(long));
 
-	printf("Taille de T[%d] : sizeof(T): %ld\n", SIZE, sizeof(T));
-	printf(
-			"Pourquoi cette taille (%ld) ? alors qu'on a demandé %d elements ?\n",
-			sizeof(T), SIZE);
-	int * p = T;
-	printf("int *p=T;\n");
+	printf("Taille de int T[%d] : sizeof(T): %ld\n", SIZE, sizeof(T));
+	printf("Pourquoi cette taille (%ld) ? alors qu'on a demandé %d elements ?\n", sizeof(T), SIZE);
+
+	int * p ;
+	printf("code : int *p;\n");
 	printf("Taille de p : sizeof(p): %ld\n", sizeof(p));
+
+	printf("code : t = T;\n");
+	printf("Taille de p : sizeof(p): %ld\n", sizeof(p));
+
 	printf(
 			"Pourquoi la taille d'un pointeur de T est différente de la taille de T ?\n");
+
+	char * pc ;
+	printf("code : char *pc;\n");
+	printf("Taille de pc : sizeof(pc): %ld\n", sizeof(pc));
+	printf(
+			"Quelle est la différence entre taille de pc et taille de p ?\n");
+
+
 
 	// Supprime le warning
 	//ref : https://gcc.gnu.org/onlinedocs/gcc/Diagnostic-Pragmas.html#Diagnostic-Pragmas
@@ -119,11 +131,11 @@ int size(int inParamTableau[]) {
 
 	return 0;
 }
+
 int main(void) {
-	size(T);
+	size(T); // size( & ( T[0] ) ) ;
 	array1();
 //	array2d();
 //	array3d();
 
 }
-
