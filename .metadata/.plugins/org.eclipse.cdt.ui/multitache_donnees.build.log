@@ -1,6 +1,9 @@
-14:34:03 **** Incremental Build of configuration Debug for project multitache_donnees ****
+14:56:10 **** Incremental Build of configuration Debug for project multitache_donnees ****
 make -j4 all 
-make: rien à faire pour « all ».
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/game.d" -MT"src/game.o" -o "src/game.o" "../src/game.c"
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/timer.d" -MT"src/timer.o" -o "src/timer.o" "../src/timer.c"
+gcc  -o "multitache_donnees"  ./src/game.o ./src/game_p4.o ./src/leds_control.o ./src/main.o ./src/timer.o   -lpthread
 
-14:34:04 Build Finished (took 520ms)
+14:56:11 Build Finished (took 605ms)
 

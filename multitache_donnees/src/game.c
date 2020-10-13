@@ -578,6 +578,10 @@ void *application(void *arg) {
 						send_message(QUEUE_SEND, &to_display,
 								sizeof(to_display));
 						gp4_show_board();
+					} else if (victory_infos.status == stop_equal){
+						if (victory_timer == STOP_TIMER){
+							victory_timer = start_timer(APP, BLINK_CANCEL_TIMER);
+						}
 					}
 				}
 				if (victory_infos.status == live) {
@@ -614,7 +618,7 @@ void *application(void *arg) {
 			}
 			if (received_message.type == TIMER
 					&& received_message.timer.number == victory_timer
-					&& received_message.timer.status == TIMEOUT) {
+					&& received_message.timer.status == TIMEOUT) { //REINITIALISATION JEU EN FIN DE PARTIE
 				player_round = NO_PLAYER;
 				to_display.type = INIT;
 				send_message(QUEUE_SEND, &to_display, sizeof(to_display));

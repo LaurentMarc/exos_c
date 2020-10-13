@@ -18,4 +18,5 @@
 #define BLINK_CANCEL_TIMER 50
 #define BLINK_VICTORY_TIMER 50
 
+
 #endif /* CONFIGURATION_H_ */

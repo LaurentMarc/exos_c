@@ -23,9 +23,6 @@ void init_matrix(void) {
 			matrix.board[row][col].RValue = black.RValue;
 			matrix.board[row][col].GValue = black.GValue;
 			matrix.board[row][col].BValue = black.BValue;
-			actual_display.board[row][col].RValue = black.RValue;
-			actual_display.board[row][col].GValue = black.GValue;
-			actual_display.board[row][col].BValue = black.BValue;
 		}
 	}
 	matrix.init = INIT_OK;
@@ -227,6 +224,7 @@ int receive_message(QUEUE_ID queue_id, void* message, int message_length) {
 }
 
 void compute_movement_message(data_msg* message, pos_token_t* data) {
+	message->type = INPUT;
 	message->token.locate.beg_position.l = data->beg_position.l;
 	message->token.locate.beg_position.c = data->beg_position.c;
 	message->token.locate.end_position.l = data->end_position.l;
@@ -286,8 +284,107 @@ void animated_horiz_movement(data_msg *message) {
 	}
 }
 
-void compute_victory_message(data_msg *message, winner_t *data){
-	message->
+void compute_victory_message(data_msg *message, winner_t *data) {
+	message->victory.first_token.c = data->win_position[0].c;
+	message->victory.first_token.l = data->win_position[0].l;
+	message->victory.last_token.c = data->win_position[3].c;
+	message->victory.last_token.l = data->win_position[3].l;
+	message->victory.type = data->win_type;
+	message->type = WIN;
+}
+
+color horiz_vict_led_off(data_msg *message) {
+	int8_t line = message->victory.first_token.l;
+	int8_t beg_col = message->victory.first_token.c;
+	int8_t end_col = message->victory.last_token.c;
+	color color_off = matrix.board[line][beg_col - 1];
+	for (int8_t col_pos = beg_col; col_pos <= end_col; col_pos++) {
+		matrix.board[line][col_pos - 1] = BACKGROUND;
+	}
+	matrix_to_simu();
+	return color_off;
+}
+
+void horiz_vict_led_on(color color, data_msg *message) {
+	int8_t line = message->victory.first_token.l;
+	int8_t beg_col = message->victory.first_token.c;
+	int8_t end_col = message->victory.last_token.c;
+	for (int8_t col_pos = beg_col; col_pos <= end_col; col_pos++) {
+		matrix.board[line][col_pos - 1] = color;
+	}
+	matrix_to_simu();
+}
+
+void vertical_vict_led_on(color color, data_msg *message) {
+	int8_t col = message->victory.first_token.c;
+	int8_t beg_line = message->victory.first_token.l;
+	int8_t end_line = message->victory.last_token.l;
+	for (int8_t line_pos = beg_line; line_pos <= end_line; line_pos++) {
+		matrix.board[line_pos][col - 1] = color;
+	}
+	matrix_to_simu();
+}
+
+color vertical_vict_led_off(data_msg *message) {
+	int8_t col = message->victory.first_token.c;
+	int8_t beg_line = message->victory.first_token.l;
+	int8_t end_line = message->victory.last_token.l;
+	color color_off = matrix.board[beg_line][col - 1];
+	for (int8_t line_pos = beg_line; line_pos <= end_line; line_pos++) {
+		matrix.board[line_pos][col - 1] = BACKGROUND;
+	}
+	matrix_to_simu();
+	return color_off;
+}
+
+void left_diag_vict_led_on(color color, data_msg *message) {
+	int8_t beg_col = message->victory.first_token.c - 1;
+	int8_t beg_line = message->victory.first_token.l - 1;
+	for (int8_t i = 0; i < 4; i++) {
+		matrix.board[beg_line + (i + 1)][beg_col - i] = color;
+	}
+	matrix_to_simu();
+}
+
+color left_diag_vict_led_off(data_msg *message) {
+	int8_t beg_col = message->victory.first_token.c - 1;
+	int8_t beg_line = message->victory.first_token.l - 1;
+	color color_off = matrix.board[beg_line + 1][beg_col];
+	for (int8_t i = 0; i < 4; i++) {
+		matrix.board[beg_line + (i + 1)][beg_col - i] = BACKGROUND;
+	}
+	matrix_to_simu();
+	return color_off;
+}
+
+void right_diag_vict_led_on(color color, data_msg *message) {
+	int8_t beg_col = message->victory.first_token.c - 1;
+	int8_t beg_line = message->victory.first_token.l - 1;
+	for (int8_t i = 0; i < 4; i++) {
+		matrix.board[beg_line + (i + 1)][beg_col + i] = color;
+	}
+	matrix_to_simu();
+}
+
+color right_diag_vict_led_off(data_msg *message) {
+	int8_t beg_col = message->victory.first_token.c - 1;
+	int8_t beg_line = message->victory.first_token.l - 1;
+	color color_off = matrix.board[beg_line + 1][beg_col];
+	for (int8_t i = 0; i < 4; i++) {
+		matrix.board[beg_line + (i + 1)][beg_col + i] = BACKGROUND;
+	}
+	matrix_to_simu();
+	return color_off;
+}
+
+void print_send_msg(data_msg *message) {
+	printf(
+			"THREAD APP mesage envoyé : pos_beg : %d%d pos_end : %d%d couleur : %d %d %d\n",
+			message->token.locate.beg_position.l,
+			message->token.locate.beg_position.c,
+			message->token.locate.end_position.l,
+			message->token.locate.end_position.c, message->token.color.RValue,
+			message->token.color.GValue, message->token.color.BValue);
 }
 
 /*-----------------------------------------------------------------------------------
@@ -302,24 +399,99 @@ void compute_victory_message(data_msg *message, winner_t *data){
 /*THREAD POUR AFFICHER LA MATRICE*/
 void *show_board(void *arg) {
 	data_msg command;
+	data_msg victory_blink_infos;
+	int8_t blink_timer = STOP_TIMER;
+	color blink_color;
+	status led_status = OFF;
 	while (1) {
 		if (matrix.init != INIT_OK) {
 			init_matrix();
 		}
+		command.type = NO_COMMAND;
 		if (receive_message(QUEUE_SEND, &command, sizeof(command)) == 0) {
-			printf(
-					"THREAD AFFICHAGE réception trame : pos_beg: %d%d, pos_end: %d%d, couleur: %d %d %d\n",
-					command.token.locate.beg_position.l,
-					command.token.locate.beg_position.c,
-					command.token.locate.end_position.l,
-					command.token.locate.end_position.c,
-					command.token.color.RValue, command.token.color.GValue,
-					command.token.color.BValue);
-			if (command.token.locate.beg_position.c
-					!= command.token.locate.end_position.c) {
-				set_matrix(&command);
-			} else {
-				animated_horiz_movement(&command);
+//			printf(
+//					"THREAD AFFICHAGE réception trame : pos_beg: %d%d, pos_end: %d%d, couleur: %d %d %d, type : %d\n",
+//					command.token.locate.beg_position.l,
+//					command.token.locate.beg_position.c,
+//					command.token.locate.end_position.l,
+//					command.token.locate.end_position.c,
+//					command.token.color.RValue, command.token.color.GValue,
+//					command.token.color.BValue, command.type);
+			if (command.type == INIT){
+				init_matrix();
+				matrix_to_simu();
+				blink_timer = STOP_TIMER;
+				led_status = OFF;
+			}
+			if (command.type == INPUT) {
+				blink_timer = STOP_TIMER;
+				if (command.token.locate.beg_position.c
+						!= command.token.locate.end_position.c) {
+					set_matrix(&command);
+				} else {
+					animated_horiz_movement(&command);
+				}
+			}
+			if (command.type == TIMER && command.timer.number == blink_timer
+					&& command.timer.status == TIMEOUT) {
+				if (victory_blink_infos.victory.type == horiz) {
+					if (led_status == OFF) {
+						horiz_vict_led_on(blink_color, &victory_blink_infos);
+						led_status = ON;
+					} else if (led_status == ON) {
+						blink_color = horiz_vict_led_off(&victory_blink_infos);
+						led_status = OFF;
+					}
+				}
+				if (victory_blink_infos.victory.type == vert) {
+					if (led_status == OFF) {
+						vertical_vict_led_on(blink_color, &victory_blink_infos);
+						led_status = ON;
+					} else if (led_status == ON) {
+						blink_color = vertical_vict_led_off(
+								&victory_blink_infos);
+						led_status = OFF;
+					}
+				}
+				if (victory_blink_infos.victory.type == left_diag) {
+					if (led_status == OFF) {
+						left_diag_vict_led_on(blink_color,
+								&victory_blink_infos);
+						led_status = ON;
+					} else if (led_status == ON) {
+						blink_color = left_diag_vict_led_off(
+								&victory_blink_infos);
+						led_status = OFF;
+					}
+				}
+				if (victory_blink_infos.victory.type == right_diag) {
+					if (led_status == OFF) {
+						right_diag_vict_led_on(blink_color,
+								&victory_blink_infos);
+						led_status = ON;
+					} else if (led_status == ON) {
+						blink_color = right_diag_vict_led_off(
+								&victory_blink_infos);
+						led_status = OFF;
+					}
+				}
+				blink_timer = start_timer(DISPLAY, BLINK_TIMER);
+			}
+			if (command.type == WIN) {
+				victory_blink_infos = command;
+				if (blink_timer == STOP_TIMER) {
+					blink_timer = start_timer(DISPLAY, BLINK_TIMER);
+					led_status = ON;
+				}
+				printf(
+						"DISPLAY VICTORY command type : %d, victory type : %d,"
+								" pos first_token CL : %d%d, pos last_token CL : %d%d\n",
+						victory_blink_infos.type,
+						victory_blink_infos.victory.type,
+						victory_blink_infos.victory.first_token.c,
+						victory_blink_infos.victory.first_token.l,
+						victory_blink_infos.victory.last_token.c,
+						victory_blink_infos.victory.last_token.l);
 			}
 		}
 	}
@@ -334,6 +506,7 @@ void *application(void *arg) {
 	winner_t victory_infos;
 	int8_t idle_timer = STOP_TIMER;
 	int8_t round_timer = STOP_TIMER;
+	int8_t victory_timer = STOP_TIMER;
 	while (1) {
 		data_msg received_message;
 		pos_token_t played_token;
@@ -351,7 +524,8 @@ void *application(void *arg) {
 			printf("application - réception valeur : pad : %d command : %d\n",
 					received_message.pad, received_message.command);
 
-			if (received_message.timer.status == TIMEOUT) {
+			if (received_message.timer.status == TIMEOUT
+					&& received_message.type == TIMER) {
 				if (received_message.timer.number == idle_timer) {
 					idle_timer = STOP_TIMER;
 				}
@@ -362,10 +536,11 @@ void *application(void *arg) {
 				received_message.command = DOWN;
 			}
 			if ((received_message.pad == player_round)
-					&& (victory_infos.status == live)) {
+					&& (victory_infos.status == live)
+					&& (received_message.type == INPUT
+							|| received_message.type == TIMER)) {
 				stop_timer(idle_timer);
 				idle_timer = STOP_TIMER;
-				printf("APP entrée commande joueur\n");
 				if (received_message.command == RIGHT) {
 					played_token = gp4_move_right();
 					compute_movement_message(&to_display, &played_token);
@@ -375,11 +550,11 @@ void *application(void *arg) {
 					compute_movement_message(&to_display, &played_token);
 				}
 				if (received_message.command == DOWN) {
-					printf("entrée DOWN play token \n");
 					stop_timer(round_timer);
 					round_timer = STOP_TIMER;
 					played_token = gp4_play_token();
 					compute_movement_message(&to_display, &played_token);
+					print_send_msg(&to_display);
 					send_message(QUEUE_SEND, &to_display, sizeof(to_display));
 					victory_infos = gp4_check_winner();
 					if (victory_infos.status == live) {
@@ -391,14 +566,31 @@ void *application(void *arg) {
 							player_round = pad_player_1;
 							to_display.token.color = COLOR_P1;
 						}
+						compute_movement_message(&to_display, &played_token);
 					} else if (victory_infos.status == stop_winner) {
+						if (victory_timer == STOP_TIMER) {
+							victory_timer = start_timer(APP,
+							BLINK_VICTORY_TIMER);
+						}
+						printf("APP victory_status = stop_winner\n");
 						compute_victory_message(&to_display, &victory_infos);
+						print_send_msg(&to_display);
+						send_message(QUEUE_SEND, &to_display,
+								sizeof(to_display));
+						gp4_show_board();
 					}
-
+				}
+				if (victory_infos.status == live) {
+					print_send_msg(&to_display);
+					send_message(QUEUE_SEND, &to_display, sizeof(to_display));
+					gp4_show_board();
 				}
 			}
 			if (player_round == NO_PLAYER) { //INITIALISATION D'UNE PARTIE : JETON JOUEUR 1 AU CENTRE
 				printf("init game\n");
+				to_display.type = INIT;
+				send_message(QUEUE_SEND, &to_display, sizeof(to_display));
+				victory_timer = STOP_TIMER;
 				if (received_message.pad == PAD_1) {
 					pad_player_1 = PAD_1;
 					pad_player_2 = PAD_2;
@@ -413,21 +605,20 @@ void *application(void *arg) {
 				played_token.end_position.l = 1;
 				played_token.end_position.c = START_POSITION;
 				to_display.token.color = COLOR_P1;
+				to_display.type = INPUT;
 				gp4_init();
 				compute_movement_message(&to_display, &played_token);
+				print_send_msg(&to_display);
+				send_message(QUEUE_SEND, &to_display, sizeof(to_display));
+				gp4_show_board();
 			}
-			printf(
-					"THREAD APP mesage envoyé : pos_beg : %d%d pos_end : %d%d couleur : %d %d %d\n",
-					to_display.token.locate.beg_position.l,
-					to_display.token.locate.beg_position.c,
-					to_display.token.locate.end_position.l,
-					to_display.token.locate.end_position.c,
-					to_display.token.color.RValue,
-					to_display.token.color.GValue,
-					to_display.token.color.BValue);
-			send_message(QUEUE_SEND, &to_display, sizeof(to_display));
-			gp4_show_board();
-			//TODO passer active_player à NO_PLAYER en fin de partie
+			if (received_message.type == TIMER
+					&& received_message.timer.number == victory_timer
+					&& received_message.timer.status == TIMEOUT) {
+				player_round = NO_PLAYER;
+				to_display.type = INIT;
+				send_message(QUEUE_SEND, &to_display, sizeof(to_display));
+			}
 		}
 	}
 	return NULL;
@@ -462,6 +653,7 @@ void *user_button(void *arg) {
 				if (input[2] == LEFT) {
 					to_app.command = LEFT;
 				}
+				to_app.type = INPUT;
 				send_message(QUEUE_READ, &to_app, sizeof(to_app));
 			}
 		}
