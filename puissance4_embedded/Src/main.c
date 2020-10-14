@@ -105,253 +105,55 @@ int main(void)
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
-	//création des couleurs//
-
-	typedef struct{
-		int RValue;
-		int GValue;
-		int BValue;
-	}color;
-
-	color white = {255, 255, 255},
-			green = {0, 255, 0},
-			blue = {0, 0, 255},
-			red = {255, 0, 0},
-			purple = {255, 0, 255},
-			yellow = {255, 255, 0},
-			black = {0, 0, 0};
-
-	color blk_line [7] = {black, black, black, black, black, black, black};
-	color *actual_display [7] = {blk_line, blk_line, blk_line, blk_line, blk_line, blk_line, blk_line};
-
-//	char int_to_ascii_hex_nibble(uint8_t nibble) {
-//		if (nibble < 10) return '0'+nibble;
-//		else if (nibble < 16) return 'A'+(nibble-10);
-//		else return '0';
-//	}
-//	void setLedColor(uint8_t row, uint8_t col, uint8_t red, uint8_t green, uint8_t blue) {
-//		uint8_t trame[10];
-//		trame[0] = 'R';
-//		trame[1] = '0' + row;
-//		trame[2] = '0' + col;
-//		trame[3] = int_to_ascii_hex_nibble((red & 0xf0)>>4);
-//		trame[4] = int_to_ascii_hex_nibble(red & 0x0f);
-//		trame[5] = int_to_ascii_hex_nibble((green & 0xf0)>>4);
-//		trame[6] = int_to_ascii_hex_nibble(green & 0x0f);
-//		trame[7] = int_to_ascii_hex_nibble((blue & 0xf0)>>4);
-//		trame[8] = int_to_ascii_hex_nibble(blue & 0x0f);
-//		trame[9] = '\n';
-//	 	HAL_UART_Transmit(&huart3, trame, 10, 100);
-//	}
-
-	void setLedColor(const unsigned int row, const unsigned int col, const unsigned int red, const unsigned int green,
-			const unsigned int blue) {
-
-		char message[11];
-		sprintf(message, "R%d%d%02x%02x%02x\n", row, col, red, green, blue);
-		HAL_UART_Transmit(&huart3, (uint8_t*)message, strlen(message), 10);
-		HAL_Delay(200);
-
-	}
-
-	//recoit un tableau et l'affiche//
-
-	//TODO ajouter fonction pour comparer matrice et actual_display pour modifier que les cases nécessaires //
-
-	void Setledmatrix(color **tabline, int tabsize){
-		for (int row = 0; row < tabsize; row ++){
-			for (int col = 0; col < tabsize; col ++){
-//				if ((tabline[row][col].RValue != actual_display[row][col].RValue)
-//						|| (tabline[row][col].GValue != actual_display[row][col].GValue)
-//						|| (tabline[row][col].BValue != actual_display[row][col].BValue))
-//				{
-					setLedColor((row), (col), tabline[row][col].RValue, tabline[row][col].GValue, tabline[row][col].BValue );
-					actual_display[row][col].RValue = tabline[row][col].RValue;
-					actual_display[row][col].GValue = tabline[row][col].GValue;
-					actual_display[row][col].BValue = tabline[row][col].BValue;
-//				}
-			}
-		}
-	}
 
 
+	//	char int_to_ascii_hex_nibble(uint8_t nibble) {
+	//		if (nibble < 10) return '0'+nibble;
+	//		else if (nibble < 16) return 'A'+(nibble-10);
+	//		else return '0';
+	//	}
+	//	void setLedColor(uint8_t row, uint8_t col, uint8_t red, uint8_t green, uint8_t blue) {
+	//		uint8_t trame[10];
+	//		trame[0] = 'R';
+	//		trame[1] = '0' + row;
+	//		trame[2] = '0' + col;
+	//		trame[3] = int_to_ascii_hex_nibble((red & 0xf0)>>4);
+	//		trame[4] = int_to_ascii_hex_nibble(red & 0x0f);
+	//		trame[5] = int_to_ascii_hex_nibble((green & 0xf0)>>4);
+	//		trame[6] = int_to_ascii_hex_nibble(green & 0x0f);
+	//		trame[7] = int_to_ascii_hex_nibble((blue & 0xf0)>>4);
+	//		trame[8] = int_to_ascii_hex_nibble(blue & 0x0f);
+	//		trame[9] = '\n';
+	//	 	HAL_UART_Transmit(&huart3, trame, 10, 100);
+	//	}
 
-
-	//créée et affiche un tableau de couleur unie//
-
-	void Setonecolor(color color_selected,int tabsize){
-		color line [7] = {color_selected, color_selected, color_selected, color_selected, color_selected, color_selected, color_selected};
-		color * tabline [7] = {line, line, line, line, line, line, line};
-		Setledmatrix(tabline, tabsize);
-	}
-
-
-	//créée et affiche tableau avec numéro//
-
-	void Setnumber(int number, color nbr_color, color bckgrnd, int tabsize){
-		if (number == 0){                  // modifie la couleur des emplacements à modifier pour former un 0 //
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_5 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-		if (number == 1){                  // modifie la couleur des emplacements à modifier pour former un 1 //
-			color line_1 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_6 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_7 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-		if (number == 2){
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 3){
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 4){
-			color line_1 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 5){
-			color line_1 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 6){
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 7){
-			color line_1 [7] = {bckgrnd, nbr_color, nbr_color, nbr_color, nbr_color, nbr_color, bckgrnd};
-			color line_2 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd};
-			color line_6 [7] = {bckgrnd, bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color line_7 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 8){
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-
-		if (number == 9){
-			color line_1 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_2 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_3 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_4 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color line_5 [7] = {bckgrnd, bckgrnd, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_6 [7] = {bckgrnd, nbr_color, bckgrnd, bckgrnd, bckgrnd, nbr_color, bckgrnd};
-			color line_7 [7] = {bckgrnd, bckgrnd, nbr_color, nbr_color, nbr_color, bckgrnd, bckgrnd};
-			color *number_tabline [7] = {line_1, line_2, line_3, line_4, line_5, line_6, line_7};
-			Setledmatrix(number_tabline, tabsize);
-		}
-	}
-
-
-	//affiche un compte à rebours
-
-	void countdown(int countdown, int tabsize){
-		for(int count = countdown; count >= 0; count --){
-			if (count == 9){
-				Setnumber(count, white, black, tabsize);
-			}
-			if (count == 8){
-				Setnumber(count, blue, black, tabsize);
-			}
-			if (count == 7){
-				Setnumber(count, green, black, tabsize);
-			}
-			if (count == 6){
-				Setnumber(count, yellow, black, tabsize);
-			}
-			if (count == 5){
-				Setnumber(count, purple, black, tabsize);
-			}
-			if (count == 4){
-				Setnumber(count, red, black, tabsize);
-			}
-			if (count == 3){
-				Setnumber(count, white, green, tabsize);
-			}
-			if (count == 2){
-				Setnumber(count, white, yellow, tabsize);
-			}
-			if (count == 1){
-				Setnumber(count, white, purple, tabsize);
-			}
-			if (count == 0){
-				Setnumber(count, white, red, tabsize);
-			}
-			HAL_Delay(400);
-		}
-	}
 
 	while (1)
 	{
-		//Setnumber(1, red, black, 7);
-		//Setnumber(0, blue, black, 7);
-		countdown(9, 7);
+
+		queue_push_app = queue_init();
+		queue_app_display = queue_init();
+
+		pthread_mutex_init(&queue_push_app->mutex, NULL);
+		pthread_mutex_init(&queue_app_display->mutex, NULL);
+
+		sem_init(&sem_button, 0, 0);
+		sem_init(&sem_display, 0, 0);
+
+		openLink();
+		pthread_t read;
+		pthread_t display;
+		pthread_t app;
+		pthread_t timer;
+		pthread_create(&read, NULL, user_button, NULL);
+		pthread_create(&display, NULL, show_board, NULL);
+		pthread_create(&app, NULL, application, NULL);
+		pthread_create(&timer, NULL, timers, NULL);
+		pthread_join(timer, NULL);
+		pthread_join(read, NULL);
+		pthread_join(display, NULL);
+		pthread_join(app, NULL);
+		closeLink();
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
