@@ -20,7 +20,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "game.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
