@@ -32,6 +32,10 @@
 		<item value="false" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="Delay"/>
+			<item value="HAL_Delay"/>
+			<item value="receiveFromSerialHandle"/>
+			<item value="receive_message"/>
 			<item value="gp4_matrix"/>
 			<item value="matrix"/>
 		</list>

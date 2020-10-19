@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;Core, Drivers, EWARM, Middlewares, p4_mbed.ioc&apos; to &apos;puissance4_embedded&apos;" description="Move 5 resources to &apos;puissance4_embedded&apos;" destination="/puissance4_embedded" element1="p4_mbed/Core" element2="p4_mbed/Drivers" element3="p4_mbed/EWARM" element4="p4_mbed/Middlewares" element5="p4_mbed/p4_mbed.ioc" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="5" stamp="1602762155315" updateReferences="true"/>
+</session>

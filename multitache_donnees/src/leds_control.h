@@ -3,14 +3,13 @@
 
 typedef enum {
   LCRC_OK,
-  LCRC_ERROR_SERIAL_OPEN,  // Check simulator status - impossible to open serial link
   LCRC_ERROR_SERIAL_WRITE, // Check simulator status - impossible to write on serial link
   LCRC_ERROR_SERIAL_READ,
-  LCRC_ERROR_SERIAL_CLOSE, // Check simulator status - impossible to close serial link
   LCRC_ERROR_COL,          // COL must be between 1 and 7
   LCRC_ERROR_ROW,          // ROW must be between 1 and 7
   LCRC_ERROR_RGB_VALUE,    // Value of red, green and blue must be less or equal to 255
 } LedControlReturnCode ;
+
 
 /**
  * @brief Send command to a led

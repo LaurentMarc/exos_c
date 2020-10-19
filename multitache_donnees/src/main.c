@@ -18,8 +18,8 @@ int main(void) {
 	pthread_mutex_init(&queue_app_display->mutex, NULL);
 
 	printf("initialisation semaphores\n");
-	sem_init(&sem_button, 0, 0);
-	sem_init(&sem_display, 0, 0);
+	//sem_init(&sem_button, 0, 0);
+	//sem_init(&sem_display, 0, 0);
 
 	printf("ouverture liaison port série\n");
 	openLink();

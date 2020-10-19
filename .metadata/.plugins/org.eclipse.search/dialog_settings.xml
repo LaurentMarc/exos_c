@@ -24,9 +24,9 @@
 		<item value="org.eclipse.cdt.ui.pdomSearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="586" key="DIALOG_WIDTH"/>
+		<item value="606" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="472" key="DIALOG_HEIGHT"/>
+		<item value="473" key="DIALOG_HEIGHT"/>
 		<item value="670" key="DIALOG_X_ORIGIN"/>
 		<item value="208" key="DIALOG_Y_ORIGIN"/>
 	</section>
