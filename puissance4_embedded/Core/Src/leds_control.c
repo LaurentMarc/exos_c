@@ -9,7 +9,9 @@
 #include "cmsis_os.h"
 
 
+extern UART_HandleTypeDef huart7;
 extern UART_HandleTypeDef huart3;
+
 
 #ifdef TEST_HEADER
 #include TEST_HEADER
@@ -117,7 +119,7 @@ char readbutton(char *pReadData, char DataSize)
  * -----------------------------------------------------------------------------------
  */
 
-void task_serial(void *arg) {
+void serial(void *arg) {
 	while(1){
 		unsigned char buffer[SIZE_OF_LED_COMMAND_BUFFER] = { 0 };
 		if (osMessageQueueGetCount(queue_huart_transmitHandle) != 0){

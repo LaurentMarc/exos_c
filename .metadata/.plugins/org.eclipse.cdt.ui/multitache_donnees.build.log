@@ -1,6 +1,37 @@
-09:57:15 **** Incremental Build of configuration Debug for project multitache_donnees ****
+15:47:21 **** Incremental Build of configuration Debug for project multitache_donnees ****
 make -j4 all 
-make: Nothing to be done for 'all'.
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/game.d" -MT"src/game.o" -o "src/game.o" "../src/game.c"
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/leds_control.d" -MT"src/leds_control.o" -o "src/leds_control.o" "../src/leds_control.c"
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/timer.d" -MT"src/timer.o" -o "src/timer.o" "../src/timer.c"
+../src/leds_control.c: In function ‘openLink’:
+../src/leds_control.c:75:21: error: ‘LCRC_ERROR_SERIAL_OPEN’ undeclared (first use in this function); did you mean ‘LCRC_ERROR_SERIAL_READ’?
+   return fd == -1 ? LCRC_ERROR_SERIAL_OPEN : LCRC_OK;
+                     ^~~~~~~~~~~~~~~~~~~~~~
+                     LCRC_ERROR_SERIAL_READ
+../src/leds_control.c:75:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/leds_control.c: In function ‘closeLink’:
+../src/leds_control.c:80:12: error: ‘LCRC_ERROR_SERIAL_CLOSE’ undeclared (first use in this function); did you mean ‘LCRC_ERROR_SERIAL_WRITE’?
+     return LCRC_ERROR_SERIAL_CLOSE;
+            ^~~~~~~~~~~~~~~~~~~~~~~
+            LCRC_ERROR_SERIAL_WRITE
+../src/leds_control.c: In function ‘setLedColor’:
+../src/leds_control.c:101:12: error: ‘LCRC_ERROR_SERIAL_OPEN’ undeclared (first use in this function); did you mean ‘LCRC_ERROR_SERIAL_READ’?
+     return LCRC_ERROR_SERIAL_OPEN;
+            ^~~~~~~~~~~~~~~~~~~~~~
+            LCRC_ERROR_SERIAL_READ
+../src/leds_control.c: In function ‘readbutton’:
+../src/leds_control.c:121:12: error: ‘LCRC_ERROR_SERIAL_OPEN’ undeclared (first use in this function); did you mean ‘LCRC_ERROR_SERIAL_READ’?
+     return LCRC_ERROR_SERIAL_OPEN;
+            ^~~~~~~~~~~~~~~~~~~~~~
+            LCRC_ERROR_SERIAL_READ
+../src/leds_control.c: In function ‘openLink’:
+../src/leds_control.c:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/leds_control.o' failed
+make: *** [src/leds_control.o] Error 1
+make: *** Waiting for unfinished jobs....
 
-09:57:16 Build Finished (took 571ms)
+15:47:22 Build Finished (took 724ms)
 

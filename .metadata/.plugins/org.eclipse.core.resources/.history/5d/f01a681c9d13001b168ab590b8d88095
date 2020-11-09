@@ -1,0 +1,685 @@
+/* USER CODE BEGIN Header */
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+ * All rights reserved.</center></h2>
+ *
+ * This software component is licensed by ST under Ultimate Liberty license
+ * SLA0044, the "License"; You may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:
+ *                             www.st.com/SLA0044
+ *
+ ******************************************************************************
+ */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "cmsis_os.h"
+#include "string.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define BLUE 1
+#define GREEN 0
+#define FRAME_LENGTH 24
+#define NB_OF_LED 64
+#define HIGHT_TIME_1 9
+#define LOW_TIME_1 1
+#define HIGHT_TIME_0 6
+#define LOW_TIME_0 2
+#define COLOR_ON 01010000
+#define COLOR_OFF 00000000
+#define TAB_SIZE 8
+#define CODE_0 0
+#define CODE_1 1
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+ETH_HandleTypeDef heth;
+
+UART_HandleTypeDef huart3;
+
+PCD_HandleTypeDef hpcd_USB_OTG_FS;
+
+int selected_color;
+
+typedef struct {
+	int RValue;
+	int GValue;
+	int BValue;
+} color;
+
+color matrix[TAB_SIZE][TAB_SIZE];
+char frame_message[NB_OF_LED * FRAME_LENGTH];
+
+
+
+/* Definitions for GreenLED */
+osThreadId_t GreenLEDHandle;
+const osThreadAttr_t GreenLED_attributes = {
+		.name = "GreenLED",
+		.priority = (osPriority_t) osPriorityNormal,
+		.stack_size = 128 * 4
+};
+/* Definitions for BlueLED */
+osThreadId_t BlueLEDHandle;
+const osThreadAttr_t BlueLED_attributes = {
+		.name = "BlueLED",
+		.priority = (osPriority_t) osPriorityNormal,
+		.stack_size = 128 * 4
+};
+/* Definitions for Red_LED */
+osThreadId_t Red_LEDHandle;
+const osThreadAttr_t Red_LED_attributes = {
+		.name = "Red_LED",
+		.priority = (osPriority_t) osPriorityNormal,
+		.stack_size = 128 * 4
+};
+/* Definitions for HighPrioTask */
+osThreadId_t HighPrioTaskHandle;
+const osThreadAttr_t HighPrioTask_attributes = {
+		.name = "HighPrioTask",
+		.priority = (osPriority_t) osPriorityHigh,
+		.stack_size = 128 * 4
+};
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_ETH_Init(void);
+static void MX_USART3_UART_Init(void);
+static void MX_USB_OTG_FS_PCD_Init(void);
+void green_led(void *argument);
+void blue_led(void *argument);
+void red_led(void *argument);
+void high_task(void *argument);
+
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+void init_matrix(void) {
+	for (int row = 0; row < TAB_SIZE; row++) {
+		for (int col = 0; col < TAB_SIZE; col++) {
+			if (col % 2){
+				matrix[row][col].GValue = COLOR_ON;
+			} else {
+				matrix[row][col].GValue = COLOR_OFF;
+			}
+			matrix[row][col].BValue = COLOR_OFF;
+			matrix[row][col].RValue = COLOR_OFF;
+		}
+	}
+}
+/* USER CODE END 0 */
+
+/**
+ * @brief  The application entry point.
+ * @retval int
+ */
+int main(void)
+{
+	/* USER CODE BEGIN 1 */
+
+	/* USER CODE END 1 */
+
+	/* MCU Configuration--------------------------------------------------------*/
+
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
+
+	/* USER CODE BEGIN Init */
+	selected_color = BLUE;
+	/* USER CODE END Init */
+
+	/* Configure the system clock */
+	SystemClock_Config();
+
+	/* USER CODE BEGIN SysInit */
+
+	/* USER CODE END SysInit */
+
+	/* Initialize all configured peripherals */
+	MX_GPIO_Init();
+	MX_ETH_Init();
+	MX_USART3_UART_Init();
+	MX_USB_OTG_FS_PCD_Init();
+	/* USER CODE BEGIN 2 */
+	init_matrix();
+
+	/* USER CODE END 2 */
+
+	/* Init scheduler */
+	osKernelInitialize();
+
+	/* USER CODE BEGIN RTOS_MUTEX */
+	/* add mutexes, ... */
+	/* USER CODE END RTOS_MUTEX */
+
+	/* USER CODE BEGIN RTOS_SEMAPHORES */
+	/* add semaphores, ... */
+	/* USER CODE END RTOS_SEMAPHORES */
+
+	/* USER CODE BEGIN RTOS_TIMERS */
+	/* start timers, add new ones, ... */
+	/* USER CODE END RTOS_TIMERS */
+
+	/* USER CODE BEGIN RTOS_QUEUES */
+	/* add queues, ... */
+	/* USER CODE END RTOS_QUEUES */
+
+	/* Create the thread(s) */
+	/* creation of GreenLED */
+	GreenLEDHandle = osThreadNew(green_led, NULL, &GreenLED_attributes);
+
+	/* creation of BlueLED */
+	BlueLEDHandle = osThreadNew(blue_led, NULL, &BlueLED_attributes);
+
+	/* creation of Red_LED */
+	Red_LEDHandle = osThreadNew(red_led, NULL, &Red_LED_attributes);
+
+	/* creation of HighPrioTask */
+	HighPrioTaskHandle = osThreadNew(high_task, NULL, &HighPrioTask_attributes);
+
+	/* USER CODE BEGIN RTOS_THREADS */
+	/* add threads, ... */
+	/* USER CODE END RTOS_THREADS */
+
+	/* Start scheduler */
+	osKernelStart();
+
+	/* We should never get here as control is now taken by the scheduler */
+	/* Infinite loop */
+	/* USER CODE BEGIN WHILE */
+	while (1)
+	{
+		/* USER CODE END WHILE */
+
+		/* USER CODE BEGIN 3 */
+	}
+	/* USER CODE END 3 */
+}
+
+/**
+ * @brief System Clock Configuration
+ * @retval None
+ */
+void SystemClock_Config(void)
+{
+	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+	RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+	/** Configure the main internal regulator output voltage
+	 */
+	__HAL_RCC_PWR_CLK_ENABLE();
+	__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+	/** Initializes the RCC Oscillators according to the specified parameters
+	 * in the RCC_OscInitTypeDef structure.
+	 */
+	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+	RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
+	RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+	RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+	RCC_OscInitStruct.PLL.PLLM = 4;
+	RCC_OscInitStruct.PLL.PLLN = 168;
+	RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+	RCC_OscInitStruct.PLL.PLLQ = 7;
+	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	/** Initializes the CPU, AHB and APB buses clocks
+	 */
+	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+			|RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+	RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+	{
+		Error_Handler();
+	}
+}
+
+/**
+ * @brief ETH Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_ETH_Init(void)
+{
+
+	/* USER CODE BEGIN ETH_Init 0 */
+
+	/* USER CODE END ETH_Init 0 */
+
+	/* USER CODE BEGIN ETH_Init 1 */
+
+	/* USER CODE END ETH_Init 1 */
+	heth.Instance = ETH;
+	heth.Init.AutoNegotiation = ETH_AUTONEGOTIATION_ENABLE;
+	heth.Init.PhyAddress = LAN8742A_PHY_ADDRESS;
+	heth.Init.MACAddr[0] =   0x00;
+	heth.Init.MACAddr[1] =   0x80;
+	heth.Init.MACAddr[2] =   0xE1;
+	heth.Init.MACAddr[3] =   0x00;
+	heth.Init.MACAddr[4] =   0x00;
+	heth.Init.MACAddr[5] =   0x00;
+	heth.Init.RxMode = ETH_RXPOLLING_MODE;
+	heth.Init.ChecksumMode = ETH_CHECKSUM_BY_HARDWARE;
+	heth.Init.MediaInterface = ETH_MEDIA_INTERFACE_RMII;
+
+	/* USER CODE BEGIN MACADDRESS */
+
+	/* USER CODE END MACADDRESS */
+
+	if (HAL_ETH_Init(&heth) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	/* USER CODE BEGIN ETH_Init 2 */
+
+	/* USER CODE END ETH_Init 2 */
+
+}
+
+/**
+ * @brief USART3 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USART3_UART_Init(void)
+{
+
+	/* USER CODE BEGIN USART3_Init 0 */
+
+	/* USER CODE END USART3_Init 0 */
+
+	/* USER CODE BEGIN USART3_Init 1 */
+
+	/* USER CODE END USART3_Init 1 */
+	huart3.Instance = USART3;
+	huart3.Init.BaudRate = 115200;
+	huart3.Init.WordLength = UART_WORDLENGTH_8B;
+	huart3.Init.StopBits = UART_STOPBITS_1;
+	huart3.Init.Parity = UART_PARITY_NONE;
+	huart3.Init.Mode = UART_MODE_TX_RX;
+	huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+	if (HAL_UART_Init(&huart3) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	/* USER CODE BEGIN USART3_Init 2 */
+
+	/* USER CODE END USART3_Init 2 */
+
+}
+
+/**
+ * @brief USB_OTG_FS Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USB_OTG_FS_PCD_Init(void)
+{
+
+	/* USER CODE BEGIN USB_OTG_FS_Init 0 */
+
+	/* USER CODE END USB_OTG_FS_Init 0 */
+
+	/* USER CODE BEGIN USB_OTG_FS_Init 1 */
+
+	/* USER CODE END USB_OTG_FS_Init 1 */
+	hpcd_USB_OTG_FS.Instance = USB_OTG_FS;
+	hpcd_USB_OTG_FS.Init.dev_endpoints = 4;
+	hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
+	hpcd_USB_OTG_FS.Init.dma_enable = DISABLE;
+	hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+	hpcd_USB_OTG_FS.Init.Sof_enable = ENABLE;
+	hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
+	hpcd_USB_OTG_FS.Init.lpm_enable = DISABLE;
+	hpcd_USB_OTG_FS.Init.vbus_sensing_enable = ENABLE;
+	hpcd_USB_OTG_FS.Init.use_dedicated_ep1 = DISABLE;
+	if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK)
+	{
+		Error_Handler();
+	}
+	/* USER CODE BEGIN USB_OTG_FS_Init 2 */
+
+	/* USER CODE END USB_OTG_FS_Init 2 */
+
+}
+
+/**
+ * @brief GPIO Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_GPIO_Init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+	/* GPIO Ports Clock Enable */
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+	__HAL_RCC_GPIOH_CLK_ENABLE();
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();
+	__HAL_RCC_GPIOD_CLK_ENABLE();
+	__HAL_RCC_GPIOG_CLK_ENABLE();
+
+	/*Configure GPIO pin Output Level */
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin Output Level */
+	HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin Output Level */
+	HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+
+	/*Configure GPIO pin : USER_Btn_Pin */
+	GPIO_InitStruct.Pin = USER_Btn_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : LED_module_Pin */
+	GPIO_InitStruct.Pin = LED_module_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(LED_module_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : LD1_Pin LD3_Pin LD2_Pin */
+	GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin|LD2_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : USB_PowerSwitchOn_Pin */
+	GPIO_InitStruct.Pin = USB_PowerSwitchOn_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(USB_PowerSwitchOn_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : USB_OverCurrent_Pin */
+	GPIO_InitStruct.Pin = USB_OverCurrent_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(USB_OverCurrent_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : Ext_Btn1_Pin Ext_Btn2_Pin Ext_Btn3_Pin Ext_Btn4_Pin */
+	GPIO_InitStruct.Pin = Ext_Btn1_Pin|Ext_Btn2_Pin|Ext_Btn3_Pin|Ext_Btn4_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+	/* EXTI interrupt init*/
+	HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+	HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+}
+
+/* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){ // INTERRUPTION !
+	if(GPIO_Pin == Ext_Btn1_Pin){
+		selected_color = !selected_color;
+	}
+}
+
+void send_1_code(){
+	int timer_1_l = LOW_TIME_1;
+	int timer_1_h = HIGHT_TIME_1;
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
+	while(timer_1_h){
+		timer_1_h--;
+	}
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
+	while(timer_1_l){
+		timer_1_l--;
+	}
+}
+
+void send_0_code(){
+	int timer_0_l = HIGHT_TIME_0;
+	int timer_0_h = LOW_TIME_0;
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
+	while(timer_0_h){
+		timer_0_h--;
+	}
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
+	while(timer_0_l){
+		timer_0_l--;
+	}
+}
+
+void reset_led(){
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
+	osDelay(1);
+}
+
+void module_green_led(){
+	//intensity = 80
+	send_0_code();
+	send_1_code();
+	send_0_code();
+	send_1_code();
+	for (int i=0; i<20; i++){
+		send_0_code();
+	}
+}
+
+void send_frame(){
+	int timer_1_l = LOW_TIME_1;
+	int timer_1_h = HIGHT_TIME_1;
+	int timer_0_l = HIGHT_TIME_0;
+	int timer_0_h = LOW_TIME_0;
+	//SEND 1
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
+	while(timer_1_h){
+		timer_1_h--;
+	}
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
+	while(timer_1_l){
+		timer_1_l--;
+	}
+
+	//SEND 0
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
+	while(timer_0_h){
+		timer_0_h--;
+	}
+	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
+	while(timer_0_l){
+		timer_0_l--;
+	}
+}
+
+void send_to_led_module(){
+	for (int row = 0; row < TAB_SIZE; row++) {
+		for (int col = 0; col < TAB_SIZE; col++) {
+			strcat(frame_message, (char*)matrix[row][col].GValue);
+			strcat(frame_message, (char*)matrix[row][col].RValue);
+			strcat(frame_message, (char*)matrix[row][col].BValue);
+		}
+	}
+	send_frame();
+}
+/* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_green_led */
+/**
+ * @brief  Function implementing the GreenLED thread.
+ * @param  argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_green_led */
+void green_led(void *argument)
+{
+	/* USER CODE BEGIN 5 */
+	/* Infinite loop */
+	for(;;)
+	{
+		//				if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){ // POLLING, DO NOT REPRODUCE AT HOME
+		//					HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+		//					osDelay(5000);
+		//				}
+		while(selected_color == GREEN){
+			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 1); // LED ON
+			osDelay(250);
+			HAL_GPIO_WritePin(GPIOB, LD1_Pin, 0);
+			osDelay(250);
+		}
+		osDelay(1);
+	}
+	/* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_blue_led */
+/**
+ * @brief Function implementing the BlueLED thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_blue_led */
+void blue_led(void *argument)
+{
+	/* USER CODE BEGIN blue_led */
+	/* Infinite loop */
+	for(;;)
+	{
+		while(selected_color == BLUE){
+			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 1); // LED ON
+			osDelay(250);
+			HAL_GPIO_WritePin(GPIOB, LD2_Pin, 0);
+			osDelay(250);
+		}
+		osDelay(1);
+	}
+	/* USER CODE END blue_led */
+}
+
+/* USER CODE BEGIN Header_red_led */
+/**
+ * @brief Function implementing the Red_LED thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_red_led */
+void red_led(void *argument)
+{
+	/* USER CODE BEGIN red_led */
+	/* Infinite loop */
+	for(;;)
+	{
+		HAL_GPIO_TogglePin(GPIOB, LD3_Pin); // LED ON
+		osDelay(250);
+		/* USER CODE END red_led */
+	}
+}
+
+/* USER CODE BEGIN Header_high_task */
+/**
+ * @brief Function implementing the HighPrioTask thread.
+ * @param argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_high_task */
+void high_task(void *argument)
+{
+	/* USER CODE BEGIN high_task */
+	/* Infinite loop */
+	for(;;)
+	{
+		send_to_led_module();
+		osDelay(250);
+		//HAL_Delay(1);
+
+	}
+	/* USER CODE END high_task */
+}
+
+/**
+ * @brief  Period elapsed callback in non blocking mode
+ * @note   This function is called  when TIM2 interrupt took place, inside
+ * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+ * a global variable "uwTick" used as application time base.
+ * @param  htim : TIM handle
+ * @retval None
+ */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	/* USER CODE BEGIN Callback 0 */
+
+	/* USER CODE END Callback 0 */
+	if (htim->Instance == TIM2) {
+		HAL_IncTick();
+	}
+	/* USER CODE BEGIN Callback 1 */
+
+	/* USER CODE END Callback 1 */
+}
+
+/**
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
+void Error_Handler(void)
+{
+	/* USER CODE BEGIN Error_Handler_Debug */
+	/* User can add his own implementation to report the HAL error return state */
+
+	/* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+	/* USER CODE BEGIN 6 */
+	/* User can add his own implementation to report the file name and line number,
+     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	/* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
