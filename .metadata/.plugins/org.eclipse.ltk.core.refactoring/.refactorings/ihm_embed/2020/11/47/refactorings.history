@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ihm_embed/Core/Src/uart7_com&apos; to &apos;uart7_com.c&apos;" description="Rename resource &apos;uart7_com&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/uart7_com" name="uart7_com.c" stamp="1605535301114" updateReferences="true"/>
+</session>

@@ -1,0 +1,27 @@
+/*
+ * readbutton.c
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+#include "readbutton.h"
+
+
+
+void readbutton(void *argument)
+{
+	for(;;)
+	{
+		if(btn_down == TRUE){
+			send_message();
+		}
+		if(btn_left == TRUE){
+			send_message();
+		}
+		if(btn_right == TRUE){
+			send_message();
+		}
+		osDelay(1);
+	}
+}
+

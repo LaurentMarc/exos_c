@@ -1,0 +1,17 @@
+/*
+ * readbutton.c
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+#include "readbutton.h"
+
+
+
+void readbutton(void *argument)
+{
+	for(;;)
+	{
+	}
+}
+

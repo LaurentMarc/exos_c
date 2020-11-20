@@ -41,6 +41,7 @@ LedControlReturnCode setLedColor(const unsigned int row,
                                  const unsigned int blue);
 
 char readbutton(char *pReadData, char DataSize);
+char setDebugString();
 
 void serial(void *arg);
 

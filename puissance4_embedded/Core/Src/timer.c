@@ -9,25 +9,25 @@
 
 static timer timer_list;
 
-//const osMutexAttr_t timer_mutex_attributes = {
-//  .name = "timer_mutex"
-//};
+const osMutexAttr_t timer_mutex_attributes = {
+  .name = "timer_mutex"
+};
 
 void init_timer(void) {
-	//osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
+	osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
 	for (int8_t i = 0; i < TIMER_NB; i++) {
 		timer_list.timer[i].countdown = 0;
 		timer_list.timer[i].owner = NO_OWNER;
 		timer_list.timer[i].status = STOP;
 		timer_list.timer[i].number = -1;
 	}
-	//osMutexRelease(timer_list.timer_mutexHandle);
+	osMutexRelease(timer_list.timer_mutexHandle);
 }
 // countdown = 1 = 1000ms
 int8_t start_timer(timer_owner owner, int countdown) {
 	int8_t activated_timer = 0;
 	int8_t selected_timer = 0;
-	//osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
+	osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
 	while (activated_timer == 0 && selected_timer != -1) {
 		if (timer_list.timer[selected_timer].status == STOP) {
 			timer_list.timer[selected_timer].countdown = countdown;
@@ -42,7 +42,7 @@ int8_t start_timer(timer_owner owner, int countdown) {
 			}
 		}
 	}
-	//osMutexRelease(timer_list.timer_mutexHandle);
+	osMutexRelease(timer_list.timer_mutexHandle);
 	return selected_timer;
 }
 
@@ -50,12 +50,12 @@ int8_t stop_timer(int8_t timer) {
 	if (timer > TIMER_NB || timer < 0) {
 		return -1; //RETOUR ERREUR VALEUR PARAMETRE
 	} else {
-		//osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
+		osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
 		timer_list.timer[timer].countdown = 0;
 		timer_list.timer[timer].number = -1;
 		timer_list.timer[timer].owner = NO_OWNER;
 		timer_list.timer[timer].status = STOP;
-		//osMutexRelease(timer_list.timer_mutexHandle);
+		osMutexRelease(timer_list.timer_mutexHandle);
 		return 0; //RETOUR OK
 	}
 
@@ -71,7 +71,7 @@ int8_t stop_timer(int8_t timer) {
 
 void timers(void *arg) {
 
-	//timer_list.timer_mutexHandle = osMutexNew(&timer_mutex_attributes);
+	timer_list.timer_mutexHandle = osMutexNew(&timer_mutex_attributes);
 
 //	while (timer_list.timer_mutexHandle == NULL) {
 //		/// !!!!!!!!!!! PAS DE MUTEX
@@ -82,8 +82,8 @@ void timers(void *arg) {
 	data_msg message;
 	/* creation of timer_mutex */
 	while (1) {
-		osDelay(1000); // == 1000 millisecondes
-		//osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
+		osDelay(100); // == 100 millisecondes
+		osMutexAcquire(timer_list.timer_mutexHandle, osWaitForever);
 		for (int8_t i = 0; i < TIMER_NB; i++) {
 			if (timer_list.timer[i].status == ACTIVE) { // décrémente tous les timer actifs
 				timer_list.timer[i].countdown--;
@@ -95,8 +95,6 @@ void timers(void *arg) {
 					message.type = TIMER;
 					message.timer.status = TIMEOUT;
 					message.timer.number = timer_list.timer[i].number;
-					printf("TIMER TIMEOUT : %d, %d\n", message.timer.status,
-							message.timer.number);
 					send_message(queue, &message); // envoi message timer timeout + numéro
 					// remise à zéro du timer
 					timer_list.timer[i].countdown = 0;
@@ -106,6 +104,6 @@ void timers(void *arg) {
 				}
 			}
 		}
-		//osMutexRelease(timer_list.timer_mutexHandle);
+		osMutexRelease(timer_list.timer_mutexHandle);
 	}
 }

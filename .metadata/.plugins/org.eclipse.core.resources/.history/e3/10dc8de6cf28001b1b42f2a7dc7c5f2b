@@ -1,0 +1,15 @@
+/*
+ * leds_control.h
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+
+#ifndef SRC_LEDS_CONTROL_H_
+#define SRC_LEDS_CONTROL_H_
+
+#define MATRIX_SIZE 8
+
+void leds_control(void *argument);
+
+#endif /* SRC_LEDS_CONTROL_H_ */

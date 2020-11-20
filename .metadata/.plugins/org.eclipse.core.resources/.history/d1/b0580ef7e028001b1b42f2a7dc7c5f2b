@@ -1,0 +1,50 @@
+/*
+ * leds_control.c
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+#include "leds_control.h"
+
+color matrix[MATRIX_SIZE][MATRIX_SIZE];
+
+void update_matrix(char *pdata){
+	uint8_t row = pdata[1];
+	uint8_t col = pdata[2];
+	uint8_t var = ((pdata[3] << 4) & 0xF0) | pdata[4];
+	matrix[row][col].red = ((pdata[3] << 4) & 0xF0) | pdata[4];
+	matrix[row][col].green = ((pdata[5] << 4) & 0xF0) | pdata[6];
+	matrix[row][col].blue = ((pdata[7] << 4) & 0xF0) | pdata[8];
+}
+
+int get_frame_size(char *pdata){
+	uint8_t row = pdata[1];
+	uint8_t col = pdata[2];
+	int result = (row * MATRIX_SIZE) + (col + 1);
+	return result;
+}
+
+void compute_frame_to_send(char *pdata){
+
+}
+
+void leds_control(void *argument)
+{
+	for(;;)
+	{
+		char buffer[MAX_BUFFER_SIZE] = "R32FF0000\n";
+		buffer[3] = 0xFF;
+		buffer[4] = 0xFF;
+		buffer[5] = 0x00;
+		buffer[6] = 0x00;
+		buffer[7] = 0x00;
+		buffer[8] = 0x00;
+		//if (receive_message(buffer)){
+		update_matrix(buffer);
+		int frame_size = get_frame_size(buffer);
+		int frame_to_send[frame_size];
+		compute_frame_to_send(frame_to_send);
+		//}
+	}
+}
+

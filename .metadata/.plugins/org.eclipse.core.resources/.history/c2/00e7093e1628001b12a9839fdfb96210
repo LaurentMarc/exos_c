@@ -1,0 +1,9 @@
+#include "uart7_com.h"
+
+void uart_com(void *argument)
+{
+  for(;;)
+  {
+    osDelay(1);
+  }
+}

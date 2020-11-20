@@ -1,0 +1,27 @@
+/*
+ * uart7_com.h
+ *
+ *  Created on: Nov 16, 2020
+ *      Author: marcl
+ */
+
+#ifndef SRC_UART7_COM_H_
+#define SRC_UART7_COM_H_
+
+//#include "main.h"
+#include "cmsis_os.h"
+
+#define MAX_BUFFER_SIZE 10
+
+typedef enum{
+	DOWN,
+	LEFT,
+	RIGHT,
+}btn_action;
+
+void uart_com(void *argument);
+void send_message();
+
+
+
+#endif /* SRC_UART7_COM_H_ */

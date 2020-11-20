@@ -95,10 +95,10 @@ const osMessageQueueAttr_t queue_app_to_display_attributes = {
   .name = "queue_app_to_display"
 };
 /* Definitions for timer_mutex */
-osMutexId_t timer_mutexHandle;
-const osMutexAttr_t timer_mutex_attributes = {
-  .name = "timer_mutex"
-};
+//osMutexId_t timer_mutexHandle;
+//const osMutexAttr_t timer_mutex_attributes = {
+//  .name = "timer_mutex"
+//};
 /* USER CODE BEGIN PV */
 /* Definitions for queue_huart_transmit */
 osMessageQueueId_t queue_huart_transmitHandle;
@@ -162,9 +162,9 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_ETH_Init();
+  //MX_ETH_Init();
   MX_USART3_UART_Init();
-  MX_USB_OTG_FS_PCD_Init();
+  //MX_USB_OTG_FS_PCD_Init();
   MX_UART7_Init();
   /* USER CODE BEGIN 2 */
 
@@ -174,7 +174,7 @@ int main(void)
   osKernelInitialize();
   /* Create the mutex(es) */
   /* creation of timer_mutex */
-  timer_mutexHandle = osMutexNew(&timer_mutex_attributes);
+  //timer_mutexHandle = osMutexNew(&timer_mutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
 	/* add mutexes, ... */

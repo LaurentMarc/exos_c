@@ -1,0 +1,12 @@
+/*
+ * leds_control.c
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+#include "leds_control.h"
+
+char matrix[MATRIX_SIZE][MATRIX_SIZE];
+
+
+

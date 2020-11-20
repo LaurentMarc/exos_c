@@ -1,0 +1,29 @@
+/*
+ * leds_control.h
+ *
+ *  Created on: Nov 17, 2020
+ *      Author: marcl
+ */
+
+#ifndef SRC_LEDS_CONTROL_H_
+#define SRC_LEDS_CONTROL_H_
+
+#include "uart7_com.h"
+
+#define MATRIX_SIZE 8
+#define NB_OF_BITS 8
+#define T0H 1
+#define T1H 10
+#define T0L 7
+#define T1L 2
+#define BIT7 0b10000000
+
+typedef struct{
+	uint8_t red;
+	uint8_t green;
+	uint8_t blue;
+}color;
+
+void leds_control(void *argument);
+
+#endif /* SRC_LEDS_CONTROL_H_ */

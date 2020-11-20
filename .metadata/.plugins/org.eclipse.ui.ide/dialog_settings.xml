@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/marcl/Atollic/exos_c/exo_RTC"/>
+		<item value="/home/marcl/Atollic/exos_c/ihm_embed"/>
 		<item value="/home/marc/Doc_DEV/exos_c/49_FreeRTOS/Core/Src"/>
 		<item value="/home/marc/Doc_DEV/exos_c/49_FreeRTOS"/>
 		<item value="/home/marc/Doc_DEV/exos_c/106_test_porte"/>
@@ -14,6 +16,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/marcl/Atollic/exos_c/exo_RTC"/>
 			<item value="/home/marcl/Atollic/exos_c/led_blink"/>
 			<item value="/home/marcl/Atollic/exos_c/famine_thread"/>
 			<item value="/home/marc/Doc_DEV/exos_c/49_FreeRTOS"/>
