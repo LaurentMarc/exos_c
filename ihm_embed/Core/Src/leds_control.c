@@ -96,11 +96,13 @@ void set_led_matrix(uint8_t max_row, uint8_t max_col){
 	uint8_t shift;
 	uint8_t mask;
 	uint8_t target_led_col = MATRIX_SIZE - 1;
-//	taskENTER_CRITICAL();
-//	portENTER_CRITICAL();
+	//	taskENTER_CRITICAL();
+	//	portENTER_CRITICAL();
 	vTaskSuspendAll();
-//	vTaskEndScheduler();
+	//	vTaskEndScheduler();
 	HAL_SuspendTick();
+	SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
+
 	for (int row = 0; row <= max_row; row++) {
 		if(row == max_row){
 			target_led_col = max_col;
@@ -170,9 +172,11 @@ void set_led_matrix(uint8_t max_row, uint8_t max_col){
 	}
 	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 1);
 	HAL_GPIO_WritePin(LED_module_GPIO_Port, LED_module_Pin, 0);
-//	portEXIT_CRITICAL();
+	//	portEXIT_CRITICAL();
 	//taskEXIT_CRITICAL();
 	HAL_ResumeTick();
+	SysTick->CTRL  |= SysTick_CTRL_TICKINT_Msk;
+
 	//vTaskStartScheduler();
 	xTaskResumeAll();
 }
